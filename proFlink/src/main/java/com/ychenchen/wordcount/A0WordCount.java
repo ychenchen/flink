@@ -10,8 +10,9 @@ import org.apache.flink.util.Collector;
 /**
  * @author alexis.yang
  * @since 2020/12/13 10:01 PM
+ * @desciption 1.最简单版本WordCount
  */
-public class WordCount {
+public class A0WordCount {
     public static void main(String[] args) throws Exception{
         // 步骤一，获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

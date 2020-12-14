@@ -2,7 +2,7 @@ package com.ychenchen.wordcount
 
 import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, createTypeInformation}
 
-object WordCount1 {
+object WordCountScala {
   def main(args: Array[String]): Unit = {
     val environment = StreamExecutionEnvironment.getExecutionEnvironment
 
