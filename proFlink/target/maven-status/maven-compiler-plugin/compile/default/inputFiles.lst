@@ -1,8 +1,10 @@
+/data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/dataset/BroadCastDemo.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/wordcount/A4WordCountWithParameterToolAndMethod.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/transformation/A04SplitDemo.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/source/A20CustomParallelSource.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/kafka/A0WordCount.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/transformation/A02UnionDemo.java
+/data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/dataset/CounterDemo.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/transformation/A05SideOutputDemo.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/wordcount/A3WordCountWithParameterToolAndLambda.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/wordcount/A1WordCountWithPojo.java
@@ -16,3 +18,4 @@
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/transformation/A01WindowWordCountJava.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/dto/WordAndCount.java
 /data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/source/A12StreamingFromCustomNoParallelSource.java
+/data/code/github/ychenchen/flink/proFlink/src/main/java/com/ychenchen/sink/WriteAsTextDemo.java
