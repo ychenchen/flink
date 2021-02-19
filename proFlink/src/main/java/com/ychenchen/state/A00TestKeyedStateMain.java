@@ -18,7 +18,7 @@ public class A00TestKeyedStateMain {
                 Tuple2.of(2L, 4L), Tuple2.of(2L, 2L), Tuple2.of(2L, 5L));
         dataStreamSource
                 .keyBy(0)
-                .flatMap(new A03CountWindowAverageWithListState())
+                .flatMap(new A04CountWindowAverageWithMapState())
                 .print();
         env.execute("A00TestKeyedStateMain");
     }
