@@ -3,6 +3,7 @@ package com.ychenchen.state;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.kafka.common.metrics.stats.Sum;
 
 /**
  * 需求:当接收到的相同 key 的元素个数等于 3 个或者超过 3 个的时候
@@ -18,7 +19,7 @@ public class A00TestKeyedStateMain {
                 Tuple2.of(2L, 4L), Tuple2.of(2L, 2L), Tuple2.of(2L, 5L));
         dataStreamSource
                 .keyBy(0)
-                .flatMap(new A04CountWindowAverageWithMapState())
+                .flatMap(new A06ContainsValueFunction())
                 .print();
         env.execute("A00TestKeyedStateMain");
     }
