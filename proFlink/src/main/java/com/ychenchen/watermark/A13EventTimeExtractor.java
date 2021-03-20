@@ -1,4 +1,4 @@
-package com.ychenchen.window;
+package com.ychenchen.watermark;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
  * @author alexis.yang
  * @since 2021/3/14 10:10 AM
  */
-public class A21EventTimeExtractor implements AssignerWithPeriodicWatermarks<Tuple2<String, Long>> {
+public class A13EventTimeExtractor implements AssignerWithPeriodicWatermarks<Tuple2<String, Long>> {
 
     FastDateFormat dateFormat = FastDateFormat.getInstance("HH:mm:ss");
     private long currentMaxEventTime = 0L;
@@ -22,9 +22,7 @@ public class A21EventTimeExtractor implements AssignerWithPeriodicWatermarks<Tup
     public long extractTimestamp(Tuple2<String, Long> element, long previousElementTimestamp) {
         long currentElementEventTime = element.f1;
         currentMaxEventTime = Math.max(currentMaxEventTime, currentElementEventTime);
-        //打印线程
-        long id = Thread.currentThread().getId();
-        System.out.println("当前线程ID:" + id + "event = " + element
+        System.out.println("event = " + element
                 + "|" + dateFormat.format(element.f1) // Event Time
                 + "|" + dateFormat.format(currentMaxEventTime) // Max EventTime
                 + "|" + dateFormat.format(getCurrentWatermark().getTimestamp())); // Current Watermark

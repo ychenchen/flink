@@ -1,13 +1,11 @@
-package com.ychenchen.window;
+package com.ychenchen.watermark;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.TimeCharacteristic;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
-import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
-import org.apache.flink.util.OutputTag;
 
 /**
  * 得到并打印每隔 3 秒钟统计前 3 秒内的相同的 key 的所有的事件

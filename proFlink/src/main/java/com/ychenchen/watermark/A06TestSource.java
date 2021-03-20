@@ -1,4 +1,4 @@
-package com.ychenchen.window;
+package com.ychenchen.watermark;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;

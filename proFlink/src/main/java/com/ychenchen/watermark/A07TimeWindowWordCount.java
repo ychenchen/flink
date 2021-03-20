@@ -1,4 +1,4 @@
-package com.ychenchen.window;
+package com.ychenchen.watermark;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -9,14 +9,16 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
 
 /**
- * 使用EventTime和Watermark处理无序事件
- * (hadoop,2)
+ * 使用EventTime处理无序事件
+ * (hadoop,1)
  * (hadoop,3)
  * (hadoop,1)
+ * 正确结果应该为231,第3个窗口的结果已经准确了,但第一个窗口的结果还有问题.接下来我们引入Watermark机制来解决第一个窗口的问题.
+ * 参照A10/A11
  * @author alexis.yang
  * @since 2021/3/14 9:15 AM
  */
-public class A10TimeWindowWordCount {
+public class A07TimeWindowWordCount {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
@@ -28,13 +30,13 @@ public class A10TimeWindowWordCount {
                 String[] split = line.split(",");
                 return new Tuple2<>(split[0], Long.valueOf(split[1]));
             }
-        }).assignTimestampsAndWatermarks(new A11EventTimeExtractor())
+        }).assignTimestampsAndWatermarks(new A08EventTimeExtractor())
                 .keyBy(0)
                 .timeWindow(Time.seconds(10), Time.seconds(5))
                 .process(new A09SumProcessWindowFunction());
 
         result.print().setParallelism(1);
 
-        env.execute("A10TimeWindowWordCount");
+        env.execute("A07TimeWindowWordCount");
     }
 }
